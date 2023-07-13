@@ -41,10 +41,10 @@ while True:
     hdwallet.from_index(0)
     hdwallet.from_index(0)
 
-    # Check if wallet is in known wallets
-    if hdwallet.address in known_wallets:
-        with open('results.txt', 'a') as f:
-            f.write(json.dumps(hdwallet.dumps(), indent=4, ensure_ascii=False) + '\n')
+   # Check if wallet is in known wallets
+if hdwallet.to_address() in known_wallets:
+    with open('results.txt', 'a') as f:
+        f.write(json.dumps(hdwallet.dumps(), indent=4, ensure_ascii=False) + '\n')
 
     wallets_generated += 1
     elapsed_time = time.time() - start_time
